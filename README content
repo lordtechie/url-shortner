@@ -1,0 +1,37 @@
+# URL Shortner Service
+
+This is a simple REST-based URL shortner application built using Spring Boot.
+
+## Features
+- Shortnes a long URL and returns a unique short URL
+- Returns the same short URL if the same input URL is provided again
+- Redirects short URL to original URL
+- Stores data in memory
+- Provides metrics API for top 3 most shortened domains.
+
+## APIs
+
+### Shorten URL
+
+POST /api/shorten
+
+Request :
+
+{
+"url" : "https://www.youtube.com/watch?v=abc"
+}
+
+Response :
+{
+"shortUrl" : "https://localhost:8082/u/aB3xP9
+}
+
+### Redirect
+GET /u/{code}
+
+### Metrics
+GET /api/metrics/top-domains
+
+## How to Run
+mvn spring-boot:run
+
